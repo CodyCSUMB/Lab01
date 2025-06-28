@@ -10,7 +10,7 @@ import java.util.Objects;
  * @author Drew "Dr.C" Clinkenbeard
  * @since 0.1.0
  */
-public class Rectangle {
+public class Rectangle implements Shape {
 
   private int width;
   private int height;
@@ -41,6 +41,7 @@ public class Rectangle {
    * TODO: Make an interface to make this generic
    * @return the area (width * height)
    */
+  @Override
   public int getArea() {
     return width * height;
   }
