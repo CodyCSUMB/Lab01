@@ -12,7 +12,10 @@ public class ShapeFactory {
     public static final int TOKEN_COUNT = 3;
 
    static Shape getShape(String shapeString) {
-        String[] shapeTokens = shapeString.split(",");
+
+        //removes whitespace. source = https://stackoverflow.com/questions/5455794/removing-whitespace-from-strings-in-java
+        String newShapeString = shapeString.replaceAll("\\s", "");
+        String[] shapeTokens = newShapeString.split(",");
         if (shapeTokens.length != TOKEN_COUNT) {
             System.out.printf("Required number of tokens %d actual number of tokens %d is the String correct?: %s",
                     TOKEN_COUNT,
