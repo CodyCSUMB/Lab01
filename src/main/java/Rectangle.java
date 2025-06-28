@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 /**
  * The {@code Rectangle} class represents a two-dimensional shape with a specified width and height.
  * It provides methods to calculate the area and determine if the shape is a square.
@@ -87,6 +89,26 @@ public class Rectangle {
    */
   public void setHeight(int height) {
     this.height = Math.abs(height);
+  }
+
+  @Override
+  public String toString() {
+    return "Rectangle{" +
+            "width=" + width +
+            ", height=" + height +
+            ", area=" + getArea() +
+            '}';
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (!(o instanceof Rectangle rectangle)) return false;
+      return width == rectangle.width && height == rectangle.height;
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(width, height);
   }
 
   //TODO: ToString
