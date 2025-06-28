@@ -11,10 +11,10 @@ public class ShapeFactory {
     //Check to make sure there are the right number of tokens
     public static final int TOKEN_COUNT = 3;
 
-    Shape getShape(String shapeString) {
+   static Shape getShape(String shapeString) {
         String[] shapeTokens = shapeString.split(",");
         if (shapeTokens.length != TOKEN_COUNT) {
-            System.out.printf("Required number of tokens %d actual number of tokens %d is the String correct?: %s %n",
+            System.out.printf("Required number of tokens %d actual number of tokens %d is the String correct?: %s",
                     TOKEN_COUNT,
                     shapeTokens.length,
                     shapeString);
@@ -27,7 +27,7 @@ public class ShapeFactory {
         if (shapeType.equals("rectangle")) {
             return new Rectangle(width, height);
         } else {
-            System.out.printf("I don't know what %s is", shapeType);
+            System.out.printf("I don't know what %s is\n", shapeType);
             return null;
         }
     }
