@@ -24,10 +24,18 @@ public class ShapeFactory {
             return null;
         }
         String shapeType = shapeTokens[SHAPE_TYPE];
-        int width = Integer.parseInt(shapeTokens[SHAPE_WIDTH]);
-        int height = Integer.parseInt(shapeTokens[SHAPE_HEIGHT]);
 
-        if (shapeType.equals("rectangle")) {
+        int height;
+        int width;
+        try {
+            width = Integer.parseInt(shapeTokens[SHAPE_WIDTH]);
+            height = Integer.parseInt(shapeTokens[SHAPE_HEIGHT]);
+        } catch (NumberFormatException e) {
+            System.out.printf("parse error");
+            return null;
+        }
+
+       if (shapeType.equals("rectangle")) {
             return new Rectangle(width, height);
         } else {
             System.out.printf("I don't know what %s is\n", shapeType);
