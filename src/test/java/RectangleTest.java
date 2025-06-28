@@ -102,4 +102,11 @@ class RectangleTest {
   void getHeight() {
     //TODO: Write a test to check that height is being retrieved correctly.
   }
+
+  @Test
+  void getEquality() {
+    assertNotEquals(testRectangleOne, testRectangleTwo);
+    Rectangle r1 = new Rectangle(widthOne, heightOne);
+    assertEquals(testRectangleOne, r1);
+  }
 }
